@@ -8,8 +8,11 @@ public class Start {
 		
 		Firefox browser = new Firefox();
 		
-		browser.Login();
-		browser.searchMessage();
+		browser.LoginUkrNet();
+		//browser.LoginGmail();
+		
+		browser.searchMessageUkrNet();
+		//browser.searchMessage();
 		
 		System.out.println("Framework finished.");
 	}
