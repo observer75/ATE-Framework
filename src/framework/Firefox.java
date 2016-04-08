@@ -40,6 +40,12 @@ public class Firefox{
 		  driverFirefox.findElement(By.xpath(".//*[@id=':4c']/div/div/div[2]/span[2]")).click();
 	}
 	
+	public void searchInboxGmail(){
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(":4o")));
+		driverFirefox.findElement(By.id(":4o")).click();
+	}
+	
 	public void LoginUkrNet(){
 		
 		driverFirefox.get(baseUrlUkr);
