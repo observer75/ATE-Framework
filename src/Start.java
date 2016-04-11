@@ -13,6 +13,7 @@ public class Start {
 		
 		//browser.searchMessageUkrNet();
 		browser.searchInboxGmail();
+		browser.verifySubject();
 		
 		System.out.println("Framework finished.");
 	}

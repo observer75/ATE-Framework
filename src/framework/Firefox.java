@@ -2,7 +2,7 @@ package framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +15,26 @@ public class Firefox{
 	WebDriver driverFirefox = new FirefoxDriver();
 	
 	WebDriverWait wait = new WebDriverWait(driverFirefox, 20);
+	
+	// ============= UKr.net ===================
+	public void LoginUkrNet(){
+		
+		driverFirefox.get(baseUrlUkr);
+		driverFirefox.findElement(By.id("login")).sendKeys("ate569@ukr.net");
+		driverFirefox.findElement(By.id("password")).sendKeys("US!pf.avg");
+		driverFirefox.findElement(By.xpath(".//*[@id='login-form']/div[3]/button")).click();
+	}
+	
+	public void searchMessageUkrNet(){
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='msglist']/div[1]/div[1]/span[2]")));
+		driverFirefox.findElement(By.xpath(".//*[@id='msglist']/div[1]/div[1]/span[2]")).sendKeys("Maven");
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[8]/div/div/section[4]/a")));
+		driverFirefox.findElement(By.xpath("html/body/div[8]/div/div/section[4]/a")).click();
+	}
+	
+	//======================== Gmail.com =================================
 	
 	public void LoginGmail(){
 		  
@@ -48,20 +68,16 @@ public class Firefox{
 		driverFirefox.findElement(By.id(":4o")).click();
 	}
 	
-	public void LoginUkrNet(){
+	public void verifySubject(){
 		
-		driverFirefox.get(baseUrlUkr);
-		driverFirefox.findElement(By.id("login")).sendKeys("ate569@ukr.net");
-		driverFirefox.findElement(By.id("password")).sendKeys("US!pf.avg");
-		driverFirefox.findElement(By.xpath(".//*[@id='login-form']/div[3]/button")).click();
+		WebElement subject = driverFirefox.findElement(By.xpath("//*[@id=\":bl\"]"));
+		System.out.println(subject.getText());		
 	}
 	
-	public void searchMessageUkrNet(){
+	public void gmailLogout(){
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='msglist']/div[1]/div[1]/span[2]")));
-		driverFirefox.findElement(By.xpath(".//*[@id='msglist']/div[1]/div[1]/span[2]")).sendKeys("Maven");
-		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[8]/div/div/section[4]/a")));
-		driverFirefox.findElement(By.xpath("html/body/div[8]/div/div/section[4]/a")).click();
+		driverFirefox.findElement(By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")).click();
+		driverFirefox.findElement(By.xpath("//*[@id=\"gb_71\"]")).click();
 	}
+
 }
