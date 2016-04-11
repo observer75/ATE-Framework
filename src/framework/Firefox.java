@@ -31,6 +31,7 @@ public class Firefox{
 		
 	  }
 	
+	// This function does not work correctly. Please do not use it!
 	public void searchMessageGmail(){
 		  
 		  //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gbqfq")));
