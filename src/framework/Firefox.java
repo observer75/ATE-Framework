@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Firefox{
 	
 	String baseUrlGmail = "https://mail.google.com";
-	String baseUrlUkr = "https://mail.ukr.net";
+	String baseUrlUkrNet = "https://mail.ukr.net";
 	
 	WebDriver driverFirefox = new FirefoxDriver();
 	
@@ -19,7 +19,7 @@ public class Firefox{
 	// ============= UKr.net ===================
 	public void LoginUkrNet(){
 		
-		driverFirefox.get(baseUrlUkr);
+		driverFirefox.get(baseUrlUkrNet);
 		driverFirefox.findElement(By.id("login")).sendKeys("ate569@ukr.net");
 		driverFirefox.findElement(By.id("password")).sendKeys("US!pf.avg");
 		driverFirefox.findElement(By.xpath(".//*[@id='login-form']/div[3]/button")).click();
