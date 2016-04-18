@@ -11,6 +11,7 @@ public class FirefoxTest {
 	testFirefox.LoginGmail();
 	testFirefox.searchInboxGmail();
 	testFirefox.verifySubject();
+	testFirefox.searchMessageGmail();
 	testFirefox.gmailLogout();
   }
 }

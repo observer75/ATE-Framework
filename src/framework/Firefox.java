@@ -2,10 +2,11 @@ package framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.*;
 
 public class Firefox{
 	
@@ -59,7 +60,8 @@ public class Firefox{
 		  
 		  driverFirefox.findElement(By.id("gbqfq")).sendKeys("maven");
 		  driverFirefox.findElement(By.id("gbqfb")).click();
-		  driverFirefox.findElement(By.xpath(".//*[@id=':4c']/div/div/div[2]/span[2]")).click();
+		  Assert.assertEquals(driverFirefox.getPageSource().contains("Maven"), true);
+		  //driverFirefox.findElement(By.xpath(".//*[@id=':4c']/div/div/div[2]/span[2]")).click();
 	}
 	
 	public void searchInboxGmail(){
@@ -69,13 +71,12 @@ public class Firefox{
 	}
 	
 	public void verifySubject(){
-		
-		WebElement subject = driverFirefox.findElement(By.xpath("//*[@id=\":bl\"]"));
-		System.out.println(subject.getText());		
+		Assert.assertEquals(driverFirefox.getPageSource().contains("Fwd: Lesson TestNG (PDF)"), true);
 	}
 	
 	public void gmailLogout(){
 		
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")));
 		driverFirefox.findElement(By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")).click();
 		driverFirefox.findElement(By.xpath("//*[@id=\"gb_71\"]")).click();
 	}

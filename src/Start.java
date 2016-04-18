@@ -6,14 +6,14 @@ public class Start {
 		// TODO Auto-generated method stub
 		System.out.println("Framework started!!!");
 		
-		Firefox browser = new Firefox();
+		//Firefox browser = new Firefox();
 		
 		//browser.LoginUkrNet();
-		browser.LoginGmail();
+		//browser.LoginGmail();
 		
 		//browser.searchMessageUkrNet();
-		browser.searchInboxGmail();
-		browser.verifySubject();
+		//browser.searchInboxGmail();
+		//browser.verifySubject();
 		
 		System.out.println("Framework finished.");
 	}

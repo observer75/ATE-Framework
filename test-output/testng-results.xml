@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27697" started-at="2016-04-13T10:56:13Z" finished-at="2016-04-13T10:56:41Z">
+  <suite name="Default suite" duration-ms="38943" started-at="2016-04-18T12:16:50Z" finished-at="2016-04-18T12:17:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27697" started-at="2016-04-13T10:56:13Z" finished-at="2016-04-13T10:56:41Z">
+    <test name="Default test" duration-ms="38943" started-at="2016-04-18T12:16:50Z" finished-at="2016-04-18T12:17:29Z">
       <class name="test.FirefoxTest">
-        <test-method status="PASS" signature="Firefox()[pri:0, instance:test.FirefoxTest@174d20a]" name="Firefox" duration-ms="27686" started-at="2016-04-13T13:56:14Z" finished-at="2016-04-13T13:56:41Z">
+        <test-method status="PASS" signature="Firefox()[pri:0, instance:test.FirefoxTest@174d20a]" name="Firefox" duration-ms="38931" started-at="2016-04-18T15:16:50Z" finished-at="2016-04-18T15:17:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Firefox -->
