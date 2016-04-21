@@ -56,12 +56,14 @@ public class Firefox{
 	// TODO: create a bug
 	public void searchMessageGmail(){
 		  
-		  //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gbqfq")));
-		  
-		  driverFirefox.findElement(By.id("gbqfq")).sendKeys("maven");
+		  driverFirefox.findElement(By.id("gbqfq")).sendKeys("Lesson OOP");
 		  driverFirefox.findElement(By.id("gbqfb")).click();
-		  Assert.assertEquals(driverFirefox.getPageSource().contains("Maven"), true);
-		  //driverFirefox.findElement(By.xpath(".//*[@id=':4c']/div/div/div[2]/span[2]")).click();
+		  //Assert.assertEquals(driverFirefox.getPageSource().contains("Maven"), true);
+		  wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("//*[@id=\":c4\"]")));
+		  String messageID = "//*[@id=\":c4\"]"; 
+		  driverFirefox.findElement(By.xpath(messageID)).click();
+		  //driverFirefox.findElement(By.id(":bu")).click();
+		  
 	}
 	
 	public void searchInboxGmail(){
