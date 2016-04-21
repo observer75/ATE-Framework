@@ -5,8 +5,7 @@
     <classes>
       <class name="test.RunTests">
         <methods>
-          <include name="Chrome"/>
-          <include name="Firefox"/>
+          <include name="IE"/>
         </methods>
       </class> <!-- test.RunTests -->
     </classes>
