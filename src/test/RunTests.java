@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import framework.Firefox;
 import framework.Chrome;
 import framework.IE;
+import framework.WebDriverFactory;
 
 public class RunTests {
 	
@@ -27,13 +28,21 @@ public class RunTests {
 		//testFirefox.gmailLogout();
 	}
   
-  @Test
+  @Test (enabled = true)
   public void IE() {
-		IE testIE = new IE();
-		testIE.LoginGmail();
+	  
+	  	WebDriverFactory testIE = new WebDriverFactory();
+	  	try {
+			testIE.getInstance("IE");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	  	testIE.LoginGmail();
 		//testFirefox.searchInboxGmail();
 		//testFirefox.verifySubject();
-		testIE.searchMessageGmail();
-		//testFirefox.gmailLogout();
+		//testIE.searchMessageGmail();
 	}
+  
+   
 }

@@ -56,7 +56,7 @@ String baseUrlGmail = "https://mail.google.com";
 	
 	public void gmailLogout(){
 		
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")));
 		driverIE.findElement(By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")).click();
 		driverIE.findElement(By.xpath("//*[@id=\"gb_71\"]")).click();
 	}
