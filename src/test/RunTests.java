@@ -1,44 +1,48 @@
 package test;
 
 import org.testng.annotations.Test;
-import framework.Firefox;
-import framework.Chrome;
-import framework.IE;
+
+import com.sun.org.apache.xml.internal.security.Init;
+
+import framework.Driver;
 import framework.WebDriverFactory;
 
 public class RunTests {
 	
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void Firefox() {
-	Firefox testFirefox = new Firefox();
-	testFirefox.LoginGmail();
+	Init init = new Init();
+	init.init();
+	Driver Firefox = new Driver(null, null, null, null, null);
+	Firefox.LoginGmail();
 	//testFirefox.searchInboxGmail();
 	//testFirefox.verifySubject();
-	testFirefox.searchMessageGmail();
+	Firefox.searchMessageGmail();
 	//testFirefox.gmailLogout();
   }
   
   @Test (enabled = false)
   public void Chrome() {
-		Chrome testChrome = new Chrome();
-		testChrome.LoginGmail();
+		Driver Chrome = new Driver();
+		Chrome.LoginGmail();
 		//testFirefox.searchInboxGmail();
 		//testFirefox.verifySubject();
-		testChrome.searchMessageGmail();
+		Chrome.searchMessageGmail();
 		//testFirefox.gmailLogout();
 	}
   
-  @Test (enabled = true)
+  @Test (enabled = false)
   public void IE() {
 	  
 	  	WebDriverFactory testIE = new WebDriverFactory();
 	  	try {
 			testIE.getInstance("IE");
+			//testIE.LoginGmail();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	  	testIE.LoginGmail();
+	  	//testIE.LoginGmail();
 		//testFirefox.searchInboxGmail();
 		//testFirefox.verifySubject();
 		//testIE.searchMessageGmail();

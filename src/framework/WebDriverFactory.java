@@ -25,7 +25,7 @@ public class WebDriverFactory {
 	
 	public WebDriver getInstance(String browser) throws Exception {
 		
-		//if (webDriver == null) {
+		if (webDriver == null) {
 			if (CHROME.equals(browser)){
 				//setChromeDriver();
 				webDriver = new ChromeDriver();
@@ -34,22 +34,9 @@ public class WebDriverFactory {
 			} else if (IE.equals(browser)){
 				webDriver = new InternetExplorerDriver();
 			}
-		//}
+		}
 		
 		return webDriver;
 		
 	}
-	
-	public void LoginGmail(){
-		  
-		  webDriver.get(baseUrlGmail);
-		  //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Email")));
-		  webDriver.findElement(By.id("Email")).sendKeys("iocmarus@gmail.com");
-		  webDriver.findElement(By.id("next")).click();
-		  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Passwd")));
-
-		  webDriver.findElement(By.id("Passwd")).sendKeys("US!pf.avg");
-		  webDriver.findElement(By.id("signIn")).click();
-		  
-	  }
 }
